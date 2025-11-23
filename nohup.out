@@ -1,0 +1,32 @@
+INFO:     Started server process [60935]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.1.56:49780 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.1.56:49780 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.1.56:49806 - "GET /health/ping HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [60935]
+INFO:     Started server process [1064]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.1.56:50222 - "GET /health/ping HTTP/1.1" 200 OK
+INFO:     192.168.1.56:50223 - "GET /health/ping HTTP/1.1" 200 OK
+INFO:     192.168.1.56:50507 - "GET /mqtt/pubblish HTTP/1.1" 404 Not Found
+INFO:     192.168.1.56:50508 - "GET /mqtt/publish HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51818 - "GET /mqtt/publish HTTP/1.1" 404 Not Found
+INFO:     192.168.1.56:50524 - "GET /docs HTTP/1.1" 200 OK
+INFO:     192.168.1.56:50524 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     192.168.1.56:50628 - "GET /health/ping HTTP/1.1" 200 OK
+INFO:     192.168.1.56:50632 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.1.56:50636 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.1.56:50652 - "GET /health/ping HTTP/1.1" 200 OK
+INFO:     192.168.1.56:50661 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.1.113:58388 - "POST /mqtt/publish HTTP/1.1" 404 Not Found
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1064]
