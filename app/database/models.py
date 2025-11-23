@@ -13,3 +13,12 @@ class Token(Base):
     used = Column(Boolean, default=False)
     created_at = Column(DateTime, default=datetime.utcnow)
     used_at = Column(DateTime, nullable=True)
+
+
+class Device(Base):
+    __tablename__ = "devices"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, unique=True, index=True)
+    status = Column(String, default="offline")  # online/offline
+    created_at = Column(DateTime, default=datetime.utcnow)
