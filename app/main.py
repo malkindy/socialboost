@@ -2,10 +2,11 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import mqtt, token, tweet, devices
+from app.routers import mqtt, token, tweet, devices, ws_devices
 from app.database.session import engine
 from app.database.base import Base
 from app.database.models import Token  # ensures tables are recognized
+
 
 def create_app() -> FastAPI:
     """
@@ -25,6 +26,7 @@ def create_app() -> FastAPI:
     app.include_router(token.router, prefix="/api", tags=["Token"])  # Token endpoints under /api
     app.include_router(tweet.router, tags=["Tweet"])
     app.include_router(devices.router, prefix="/api/devices", tags=["Devices"])  # Devices endpoints
+    app.include_router(ws_devices.router)
 
     # Health endpoint
     @app.get("/health/ping")

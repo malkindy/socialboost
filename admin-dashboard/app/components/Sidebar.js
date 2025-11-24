@@ -2,8 +2,8 @@
 
 import { useDevice } from "../context/DeviceContext";
 
-export default function Sidebar({ devices }) {
-  const { selectedDevice, setSelectedDevice } = useDevice();
+export default function Sidebar() {
+  const { devices, selectedDevice, setSelectedDevice } = useDevice();
 
   return (
     <aside className="w-64 bg-white border-r shadow-lg p-6 flex-shrink-0">
@@ -14,25 +14,24 @@ export default function Sidebar({ devices }) {
         <a href="/send-token" className="hover:text-blue-500">Send Token</a>
         <a href="/settings" className="hover:text-blue-500">Settings</a>
 
-        <h2 className="mt-6 font-semibold">Devices</h2>
+        {/* Dropdown */}
+        <h2 className="mt-6 font-semibold">Select Device</h2>
+
         {devices.length === 0 ? (
           <p className="text-gray-500 text-sm mt-2">No devices found</p>
         ) : (
-          devices.map((device) => (
-            <button
-              key={device.id}
-              onClick={() => setSelectedDevice(device.id)}
-              className={`text-left w-full text-sm mt-1 px-2 py-1 rounded ${
-                selectedDevice === device.id
-                  ? "bg-blue-200 font-semibold"
-                  : device.status === "online"
-                  ? "text-green-600"
-                  : "text-red-600"
-              } hover:bg-blue-100`}
-            >
-              {device.name} - {device.status}
-            </button>
-          ))
+          <select
+            className="mt-2 p-2 border rounded bg-white"
+            value={selectedDevice || ""}
+            onChange={(e) => setSelectedDevice(e.target.value)}
+          >
+            <option value="">-- Select Device --</option>
+            {devices.map((device) => (
+              <option key={device.id} value={device.id}>
+                {device.name} ({device.status})
+              </option>
+            ))}
+          </select>
         )}
       </nav>
     </aside>
